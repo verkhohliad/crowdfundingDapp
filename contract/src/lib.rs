@@ -54,7 +54,7 @@ impl Contract {
     }
 
     pub fn list_crowdfunds(&self) -> Vec<Crowdfund> {
-        assert_self();
+        // assert_self();
         let crowdfunds = &self.crowdfunds;
         return crowdfunds.to_vec();
     }
@@ -90,6 +90,14 @@ impl Contract {
         return crowdfund.total_donations;
     }
 }
+
+// near call crowdfunddapp.verkhohliad.testnet add_crowdfund '{"title": "Eliots eye sight", "donate": 30, "description":"Raise funds for little Eliot to see again. Loss of sight was caused by an accident to the head"}' --accountId verkhohliad.testnet
+
+// near call crowdfunddapp.verkhohliad.testnet add_vote '{"id":0}' --accountId verkhohliad.testnet
+
+// near call crowdfunddapp.verkhohliad.testnet add_donation '{"id":0, "amount":1}' --accountId verkhohliad.testnet
+
+// near call crowdfunddapp.verkhohliad.testnet list_crowdfunds --accountId verkhohliad.testnet
 
 /*
  * The rest of this file holds the inline tests for the code above
